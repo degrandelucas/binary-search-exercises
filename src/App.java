@@ -8,7 +8,6 @@ public class App {
     public static void main(String[] args) throws FileNotFoundException {
         Set<Integer> listaNumeros = new TreeSet<>();
         Random generator = new Random();
-        int chosenNumber = 28;
         int iterations = 0;
         int size = 128;
         int less = 0;
@@ -16,7 +15,7 @@ public class App {
         int middle = 0;
 
         do {
-            listaNumeros.add(generator.nextInt(129));
+            listaNumeros.add(generator.nextInt(129)); // sorteia um numero que sera compartivel na lista
         } while (listaNumeros.size() < size);
 
         System.out.println(listaNumeros);
@@ -32,7 +31,7 @@ public class App {
                 major = middle - 1;
             }
             iterations++;
-        } while (chosenNumber != shot);
+        } while (less < major); //caso a lista nao for sequencial
 
         System.out.println("Foram realizadas " + iterations + " iteracoes para encontrar o numero sorteador " + shot);
 
